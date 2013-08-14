@@ -12,9 +12,15 @@ import '../static/global/global.css'
 import '../static/global/gt.js'
 import 'animate.css'
 // 导入axios
+import axios from 'axios'
 
 // store的引入
 import store from '../src/store'
+
+//在Vue的全局变量中设置$axios=axios
+//以后使用可以使用 $axios
+//Vue.prototype.$axios=axios
+Vue.use(axios)
 
 
 //if (localStorage.getItem('token')) {
