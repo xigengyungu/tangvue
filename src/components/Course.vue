@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{msg}}</h1>
-        <ul v-for="row in courseList">
+        <ul v-for="(row, index) in courseList" :key="index">
             <li>{{row.title}}</li>
         </ul>
     </div>
@@ -33,14 +33,14 @@ export default {
 
             //第一步，在main.js中配置  
             //第二步 ，使用axios发送请求 
-            _this=this;
+            var that=this;
             this.$axios.request({
                 url:'http://127.0.0.1:8000/api/v1/course/',
                 methods:'GET'
             }).then(function(ret){
                 //AJAX成功后获取内容
                 if(ret.data.code===1000){
-                    _this.courseList=ret.data.data
+                    that.courseList=ret.data.data
                 }else{
                     alert('获取数据失败')
                 }

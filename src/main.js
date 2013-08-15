@@ -19,8 +19,8 @@ import store from '../src/store'
 
 //在Vue的全局变量中设置$axios=axios
 //以后使用可以使用 $axios
-//Vue.prototype.$axios=axios
-Vue.use(axios)
+Vue.prototype.$axios=axios
+//Vue.use(axios) --错误
 
 
 //if (localStorage.getItem('token')) {

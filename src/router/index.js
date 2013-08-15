@@ -35,5 +35,5 @@ export default new Router({
       name: 'News', 
       component: News
     }
-  ]
+  ],mode:'history'
 })
