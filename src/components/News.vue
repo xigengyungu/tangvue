@@ -11,6 +11,11 @@ export default {
         return {
             msg:'这是News新闻'
         }
+    },
+    mounted(){
+        if(!this.$store.state.token){
+            this.$router.push({name:'login'})
+        }
     }
 }
 </script>

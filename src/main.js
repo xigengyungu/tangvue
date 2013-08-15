@@ -49,3 +49,17 @@ let vm = new Vue({
   components: { App },
   template: '<App/>'
 })
+
+router.beforeEach(function(to, from , next){
+  if(to.meta.requireAuth){
+    if(store.state.token){
+      next()
+    }else{
+      next({name: 'login', query:{backUrl:to.fullPath}})
+    }
+    
+  }else{
+    
+    next()
+  }
+})

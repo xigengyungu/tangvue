@@ -6,7 +6,12 @@
         <router-link to="/course">course</router-link>
         <router-link to="/micro">micro</router-link>
         <router-link to="/news">news</router-link>
+        <div v-if="this.$store.state.token">
+          <a>{{this.$store.state.token}}</a>
+        </div>
+        <div v-else>
         <router-link to="/login">Login</router-link>
+        </div>
         <router-view />
       </div>
     
