@@ -2,7 +2,7 @@
     <div>
         <h1>{{msg}}</h1>
         <ul v-for="(row, index) in courseList" :key="index">
-            <li>{{row.title}}</li>
+            <li><router-link to="/detail">{{row.title}}</router-link></li>
         </ul>
     </div>
 </template>
