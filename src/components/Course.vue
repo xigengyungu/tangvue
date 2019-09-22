@@ -2,7 +2,7 @@
     <div>
         <h1>{{msg}}</h1>
         <ul v-for="(row, index) in courseList" :key="index">
-            <li><router-link to="/detail">{{row.title}}</router-link></li>
+            <li><router-link :to="{name:'detail',params:{id:row.id}}">{{row.id}}{{row.title}}</router-link></li>
         </ul>
     </div>
 </template>

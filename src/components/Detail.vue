@@ -12,6 +12,9 @@ export default {
         return {
             msg:'Detail'
         }
+    },
+    mounted(){
+        console.log(this.$route.params.id);
     }
 }
 </script>
