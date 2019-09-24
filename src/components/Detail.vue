@@ -7,12 +7,14 @@
         <p>{{detail.level}}</p>
         <p>{{detail.slogan}}</p>
         <p>{{detail.why}}</p>
-        <div>
-        <ul v-for="(row,index) in detail.recommends" :key="index">
-           <li> {{row.title}}</li>
-        </ul></div>
+        
         <div><ul v-for="(row,index) in detail.chapers" :key="index">
             <li>{{row.name}}</li>
+        </ul></div>
+        <div>
+            <h3>推荐</h3>
+        <ul v-for="(row,index) in detail.recommends" :key="index">
+           <li @click="chgDetail(row.id)"> {{row.title}}</li>
         </ul></div>
     </div>
 </template>
@@ -37,14 +39,14 @@ export default {
         }
     },
     mounted:function(){
-        this.initDetail();
+        this.initDetail(this.$route.params.id);
     },
     methods:{
         
-        initDetail:function(){
+        initDetail:function(id){
             var that=this;
             this.$axios.request({
-                url:'http://127.0.0.1:8000/api/v1/course/'+this.$route.params.id+'/',
+                url:'http://127.0.0.1:8000/api/v1/course/'+id+'/',
                 methods:'GET'
             }).then(function(ret){
                  if(ret.data.code===1000){
@@ -56,6 +58,10 @@ export default {
             ).catch(function (params) {
                 //AJAX 请求失败
             })
+        },
+        chgDetail:function(id){
+            this.initDetail(id);
+            this.$router.push({name:'detail', params:{id:id}});
         }
     }
 }
