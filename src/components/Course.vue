@@ -1,9 +1,12 @@
 <template>
     <div>
         <h1>{{msg}}</h1>
-        <ul v-for="(row, index) in courseList" :key="index">
-            <li><router-link :to="{name:'detail',params:{id:row.id}}">{{row.id}}{{row.title}}</router-link></li>
-        </ul>
+        <div v-for="(row,idx) in courseList" :key="idx">
+            <div style="width:350px;float:left">
+            <h3><li><router-link :to="{name:'detail',params:{id:row.id}}">{{row.id}}{{row.title}}</router-link></li></h3>
+            <p>{{row.level}}</p>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -40,6 +43,7 @@ export default {
             }).then(function(ret){
                 //AJAX成功后获取内容
                 if(ret.data.code===1000){
+                    console.log(ret.data.data)
                     that.courseList=ret.data.data
                 }else{
                     alert('获取数据失败')
