@@ -6,6 +6,7 @@
         <router-link to="/course">course</router-link>
         <router-link to="/micro">micro</router-link>
         <router-link to="/news">news</router-link>
+        <router-link to="/login">Login</router-link>
         <router-view />
       </div>
     

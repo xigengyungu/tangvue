@@ -5,6 +5,7 @@ import Course from '@/components/Course'
 import Micro from '@/components/Micro'
 import News from '@/components/News'
 import Detail from '@/components/Detail'
+import Login from '@/components/Login'
 // @ 绝对路径 检索到 .....src/
 
 // 如果我们Router当做局部模块使用 一定要Vue.use(Router)
@@ -40,6 +41,11 @@ export default new Router({
       path: '/news',
       name: 'News', 
       component: News
+    },
+    {
+      path: '/login',
+      name: 'Login', 
+      component: Login
     }
   ],mode:'history'
 })
