@@ -41,11 +41,10 @@ Vue.prototype.$axios=axios
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+/* eslint-disable no-new ,引入router、store*/
 let vm = new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })

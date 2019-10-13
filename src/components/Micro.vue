@@ -11,6 +11,9 @@ export default {
         return {
             msg:'这是Micro页'
         }
+    },
+    mounted(){
+        if(!this.$store.state.token)
     }
 }
 </script>

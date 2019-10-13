@@ -7,7 +7,7 @@
         <router-link to="/micro">micro</router-link>
         <router-link to="/news">news</router-link>
         <div v-if="this.$store.state.token">
-          <a>{{this.$store.state.token}}</a>
+          <a>{{this.$store.state.username}}</a>
         </div>
         <div v-else>
         <router-link to="/login">Login</router-link>

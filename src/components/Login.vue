@@ -29,14 +29,20 @@ export default {
                 headers:{
                     'Content-Type':'application/json'
                 }
-            }).then(function(args){
-                if(args.data.code===1000){
+            }).then(function(arg){
+                var that=this;
+                console.log(this);
+                console.log(arg);
+                if(arg.data.code===1000){    
                     console.log('登录成功')
+                    that.$store.state.token = arg.dat.token
+                    that.$store.state.username = arg.data.userinfo.username
                 }else{
-                    alert('用户名或密码错误！')
+                    alert(arg.msg)
                 }
-            }).catch(function(args){
-                
+            }).catch(function(arg){
+                console.log('登录发生错误...')
+                console.log(arg)
             })
                 
                 
