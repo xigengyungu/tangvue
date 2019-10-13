@@ -13,7 +13,7 @@ export default {
         }
     },
     mounted(){
-        if(!this.$store.state.token)
+        if(!this.$store.state.token){}
     }
 }
 </script>
