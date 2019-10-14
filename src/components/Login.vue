@@ -37,6 +37,12 @@ export default {
                     console.log('登录成功')
 
                     that.$store.commit('saveToken', {token:arg.data.token, username:arg.data.userinfo.username})
+                    var url = that.$route.query.backUrl
+                    if(url){
+                        that.$router.push({path:url})
+                    }else{
+                        that.$outer.push({path:'/index'})
+                    }
                 }else{
                     alert(arg.msg)
                 }
