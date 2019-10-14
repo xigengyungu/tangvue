@@ -9,8 +9,8 @@ let store = new Vuex.Store({
 	// 三大将
 	state:{
 		userInfo:{},
-		username:null,
-		token:null,
+		username:Cookie.get('username'),
+		token:Cookie.get('token'),
 	},
 	// 修改state的唯一方法 是提交mutations
 	//添加mutations
