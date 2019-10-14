@@ -8,6 +8,7 @@
         <router-link to="/news">news</router-link>
         <div v-if="this.$store.state.token">
           <a>{{this.$store.state.username}}</a>
+          <a @click="logout">注销</a>
         </div>
         <div v-else>
         <router-link to="/login">Login</router-link>
@@ -26,6 +27,11 @@ export default {
   	return {
   	}
   },
+  methods:{
+    logout(){
+      this.$store.commit('clearToken');
+    }
+  }
 
 }
 </script>
