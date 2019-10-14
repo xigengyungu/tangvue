@@ -35,8 +35,8 @@ export default {
                 console.log(arg);
                 if(arg.data.code===1000){    
                     console.log('登录成功')
-                    that.$store.state.token = arg.data.token
-                    that.$store.state.username = arg.data.userinfo.username
+
+                    that.$store.commit('saveToken', {token:arg.data.token, username:arg.data.userinfo.username})
                 }else{
                     alert(arg.msg)
                 }

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Cookie from 'vue-cookies'
 import { SSL_OP_COOKIE_EXCHANGE } from 'constants';
 
 Vue.use(Vuex);
@@ -12,12 +13,16 @@ let store = new Vuex.Store({
 		token:null,
 	},
 	// 修改state的唯一方法 是提交mutations
+	//添加mutations
 	mutations:{
 		saveToken:function(state, userToken){
+			console.log(userToken)
+			console.log('...userToken....')
 			state.username = userToken.username;
 			state.token = userToken.token
-			Cookie.set('username', userToken.usernme, "20min")
+			Cookie.set('username', userToken.username, "20min")
 			Cookie.set('token', userToken.token, "20min")
+			console.log(state)
 		},
 		clearToken : function(state){
 			state.username = null
