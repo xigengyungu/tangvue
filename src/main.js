@@ -51,11 +51,13 @@ let vm = new Vue({
 })
 
 router.beforeEach(function(to, from , next){
+  //添加拦截器
   if(to.meta.requireAuth){
+    //当前要去的URL必须登录成功后才能访问
     if(store.state.token){
       next()
     }else{
-      next({name: 'login', query:{backUrl:to.fullPath}})
+      next({name: 'Login', query:{backUrl:to.fullPath}})
     }
     
   }else{

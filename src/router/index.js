@@ -35,6 +35,9 @@ export default new Router({
     {
       path: '/micro',
       name: 'Micro', 
+      meta:{
+        requireAuth:true
+      },
       component: Micro
     },
     {
