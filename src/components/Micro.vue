@@ -20,7 +20,7 @@ export default {
         initMicro(){
             var that=this;
             this.$axios.request({
-                url:'http://127.0.0.1:8000/api/v1/micro/',
+                url:this.$store.state.apiList.micro,
                 methods:'GET',
                 params:{
                     token:this.$store.state.token

@@ -38,7 +38,7 @@ export default {
             //第二步 ，使用axios发送请求 
             var that=this;
             this.$axios.request({
-                url:'http://127.0.0.1:8000/api/v1/course/',
+                url:this.$store.state.apiList.course,
                 methods:'GET'
             }).then(function(ret){
                 //AJAX成功后获取内容

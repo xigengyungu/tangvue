@@ -11,6 +11,12 @@ let store = new Vuex.Store({
 		userInfo:{},
 		username:Cookie.get('username'),
 		token:Cookie.get('token'),
+		apiList:{
+			course:'http://127.0.0.1:8000/api/v1/course/',
+			courseDetail:'http://127.0.0.1:8000/api/v1/course/',
+			auth:'http://127.0.0.1:8000/api/v1/auth/',
+			micro:'http://127.0.0.1:8000/api/v1/micro/'
+		}
 	},
 	// 修改state的唯一方法 是提交mutations
 	//添加mutations
